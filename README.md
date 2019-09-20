@@ -1,3 +1,9 @@
+need
+```
+sudo gem install lolcat
+sudo apt-get install curl
+```
+
 ## Demo
 ![](tik.gif)
 
