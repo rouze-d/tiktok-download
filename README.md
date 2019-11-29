@@ -3,7 +3,8 @@ need
 sudo gem install lolcat
 sudo apt-get install curl
 ```
-<p>sorry old demo<br>
+<p>sorry old demo</p>
+
 ## Demo
 ![](tik.gif)
 
