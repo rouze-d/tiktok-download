@@ -3,13 +3,12 @@ need
 sudo gem install lolcat
 sudo apt-get install curl
 ```
-<p>sorry old demo</p>
+file:<br>
+tik.sh - download single video<br>
+tok.sh - download all video
 
 ## Demo
-![](tik.gif)
+[Watch the video]
 
-You can copy all list link address and save on \<file\>.txt<br>
-then run this command:<br>
-```
-for x in `cat <you list link file>.txt`;do bash tik.sh $x;done
-```
+tik.mp4 - download single video<br>
+tok.mp4 - download all video
