@@ -4,8 +4,8 @@ sudo gem install lolcat
 sudo apt-get install curl
 ```
 file:<br>
-tik.sh - download single video<br>
-tok.sh - download all video
+tik.sh - download single video.<br>
+tok.sh - download all video. \[make sure load all page. (scroll down until finish)\]
 
 ## Demo
 [Watch the video]
