@@ -27,4 +27,4 @@ down=`curl -s -k --url $GET --user-agent 'Mozilla/5.0 (X11; Linux x86_64) AppleW
 c=$(echo $1 | cut -d '/' -f 4)
 b=$(echo $1 | cut -d '/' -f 6 | cut -d '?' -f 1)
 
-wget --show-progress -c $down -O $c-$b.mp4
+wget --user-agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36' --show-progress -c $down -O $c-$b.mp4
