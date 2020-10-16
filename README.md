@@ -1,7 +1,6 @@
 need
 ```
-sudo gem install lolcat
-sudo apt-get install curl wget
+sudo apt-get install curl wget lolcat
 ```
 file:<br>
 tik.sh - download single video.<br>
