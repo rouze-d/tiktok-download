@@ -30,7 +30,7 @@ b=$(echo $1 | cut -d '/' -f 6 | cut -d '?' -f 1)
 # two type URL request
 
 #down=`curl -s -k --url $GET --user-agent 'Opera/9.80 (Android 4.1.2; Linux; Opera Mobi/ADR-1305251841) Presto/2.11.355 Version/12.10' --connect-timeout 90 | tr '"' '\n' | grep -i -E 'video/[a-z]'\|'.mp4' | tail -n 1`
-down=`curl -s -k --url https://m.tiktok.com/node/share/video/$c/$b --user-agent 'Opera/9.80 (Android 4.1.2; Linux; Opera Mobi/ADR-1305251841) Presto/2.11.355 Version/12.10' --connect-timeout 90 | tr '"' '\n' | grep -i -E 'video_mp4' | tail -n 1`
+down=`curl -s -k --url https://www.tiktok.com/node/share/video/$c/$b --user-agent 'Opera/9.80 (Android 4.1.2; Linux; Opera Mobi/ADR-1305251841) Presto/2.11.355 Version/12.10' --connect-timeout 90 | tr '"' '\n' | grep -i -E 'video_mp4' | tail -n 1`
 
 #c=$(echo $1 | cut -d '@' -f 2 | cut -d '/' -f 1)
 
