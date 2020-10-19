@@ -22,7 +22,7 @@ read name
 
 mkdir $name
 #cp tik.sh $name/
-cat *$name*.html | tr '"' '\n' | grep @ | grep '/vid' >> $name/$name.txt
+cat *$name*.html | tr '"' '\n' | grep @ | grep '/video/' | grep '\.com/@' >> $name/$name.txt
 cd $name
 for x in `cat $name.txt`;do bash tik.sh $x;done
 echo "Done"
