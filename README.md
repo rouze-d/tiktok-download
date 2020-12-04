@@ -7,7 +7,7 @@ tik.sh - download single video.<br>
 tok.sh - download all video. \[make sure load all page. (scroll down until finish), Browser recommend : Chrome, Opera (Not work with Firefox). In input name, put target ID/username. (see video).\]
 
 ERROR 403: Forbidden. ?
-try ```git pull``` for update
+try ```git reset --hard``` and ```git pull``` for update
 
 ## Demo
 [Watch the video]
