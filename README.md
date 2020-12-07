@@ -21,9 +21,10 @@ for Chrome: <a href="https://chrome.google.com/webstore/detail/get-cookiestxt/bg
 5 ) open and copy cookie.txt<br>
 6 ) paste on 'tik.sh' script (line 32)<br>
 
-<center>
+<p align="center">
 <img src="https://github.com/rouze-d/tiktok-download/blob/master/tiktok.png" width="900" height="700"/>
-</center>
+</p>
+
 ## Demo
 [Watch the video]
 
