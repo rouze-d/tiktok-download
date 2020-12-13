@@ -4,7 +4,8 @@ sudo apt-get install curl wget
 ```
 file:<br>
 tik.sh - download single video.<br>
-tok.sh - download all video. \[make sure load all page. (scroll down until finish), Browser recommend : Chrome, Opera (Not work with Firefox). In input name, put target ID/username. (see video).\]
+tok.sh - download all video. \[make sure load all page. (scroll down until finish).<br>
+Browser recommend : Chrome, Opera (Not work with Firefox). In input name, put target ID/username. (see video).\]
 
 ## ERROR 403: Forbidden. ?
 
