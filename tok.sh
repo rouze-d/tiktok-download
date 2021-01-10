@@ -4,14 +4,14 @@
 # ▌ ▐ ▛▚ ▌▌ ▌▛▚  ▌ ▌▌ ▌▐▐▐ ▌ ▌▐ ▌ ▌▞▀▌▌ ▌▛▀ ▌
 # ▘ ▀▘▘ ▘▘▝▀ ▘ ▘ ▀▀ ▝▀  ▘▘ ▘ ▘ ▘▝▀ ▝▀▘▝▀▘▝▀▘▘by rouze_d
 
-NAME="$1"
-[ -z "$NAME" ] && echo 'Please specify a TikTokers username' && exit 1
+TIKTOK_HANDLE="$1"
+[ -z "$TIKTOK_HANDLE" ] && echo "Please specify a TikToker's handle (@some_name)" && exit 1
 
-mkdir "$NAME"
-cat *"$NAME"*.html | tr '"' '\n' | grep @ | grep '/video/' | grep '\.com/@' >> "$NAME"/"$NAME".txt
+mkdir "$TIKTOK_HANDLE"
+tr '"' '\n' < "$(find "$PWD" -iname "*$TIKTOK_HANDLE*.html")" | grep @ | grep '/video/' | grep '\.com/@' >> "$TIKTOK_HANDLE"/urls.txt
 
-while read -r x;
+while read -r url;
 do
-    ./tik.sh "$x" "$NAME"/
-done < "$NAME"/"$NAME".txt
+    ./tik.sh "$url" "$TIKTOK_HANDLE"/
+done < "$TIKTOK_HANDLE"/urls.txt
 
