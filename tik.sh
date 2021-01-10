@@ -29,10 +29,9 @@ DOWN=$(curl --cookie "$PWD"/.t_cookie.txt \
     --user-agent "$USER_AGENT" \
     --connect-timeout 90 "$VIDEO_URL" | tr '"' '\n' | grep video_mp4 | head -n 1 | sed 's/amp;//g')
 
-wget --load-cookies "$PWD"/.t_cookie.txt \
+curl --cookie "$PWD"/.t_cookie.txt \
     --referer "$VIDEO_URL" \
     --user-agent "$USER_AGENT" \
-    --show-progress \
-    --output-document "$AUTHOR"-"$ID".mp4 \
-    --continue "$DOWN"
+    --output "$AUTHOR"-"$ID".mp4 \
+    --continue-at - "$DOWN"
 
