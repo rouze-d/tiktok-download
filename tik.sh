@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # ▀▛▘▗ ▌ ▀▛▘  ▌   ▛▀▖          ▜         ▌
 #  ▌ ▄ ▌▗▘▌▞▀▖▌▗▘ ▌ ▌▞▀▖▌  ▌▛▀▖▐ ▞▀▖▝▀▖▞▀▌▞▀▖▙▀▖
 #  ▌ ▐ ▛▚ ▌▌ ▌▛▚  ▌ ▌▌ ▌▐▐▐ ▌ ▌▐ ▌ ▌▞▀▌▌ ▌▛▀ ▌
@@ -14,7 +14,7 @@ AUTHOR=$(echo "$TIKTOK_URL" | cut -d '/' -f 4)
 ID=$(echo "$TIKTOK_URL" | cut -d '/' -f 6 | cut -d '?' -f 1)
 USER_AGENT="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"
 
-VIDE_URL=$(curl --cookie "$PWD"/.cookie.txt \
+VIDEO_URL=$(curl --cookie "$PWD"/.cookie.txt \
     --silent \
     --referer "$TIKTOK_URL" \
     --user-agent "$USER_AGENT" \
@@ -24,5 +24,5 @@ curl --cookie "$PWD"/.cookie.txt \
     --referer "$TIKTOK_URL" \
     --user-agent "$USER_AGENT" \
     --output "$AUTHOR"-"$ID".mp4 \
-    --continue-at - "$VIDE_URL"
+    --continue-at - "$VIDEO_URL"
 
