@@ -7,8 +7,9 @@
 
 TIKTOK_URL="$1"
 [ -z "$TIKTOK_URL" ] \
-    && echo "Missing video link URL, usage: ./tik.sh https://www.tiktok.com/@tiktok_user/video/1234567890" \
+    && echo "Missing video link URL, usage: ./tik.sh https://www.tiktok.com/@tiktok_user/video/1234567890 [destination_folder]" \
     && exit 1
+DESTINATION_FOLDER=$2
 
 AUTHOR=$(echo "$TIKTOK_URL" | cut -d '/' -f 4)
 ID=$(echo "$TIKTOK_URL" | cut -d '/' -f 6 | cut -d '?' -f 1)
@@ -23,6 +24,6 @@ VIDEO_URL=$(curl --cookie "$PWD"/.cookie.txt \
 curl --cookie "$PWD"/.cookie.txt \
     --referer "$TIKTOK_URL" \
     --user-agent "$USER_AGENT" \
-    --output "$AUTHOR"-"$ID".mp4 \
+    --output "$DESTINATION_FOLDER""$AUTHOR"-"$ID".mp4 \
     --continue-at - "$VIDEO_URL"
 
