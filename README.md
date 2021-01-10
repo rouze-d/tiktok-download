@@ -26,8 +26,3 @@ for Chrome: <a href="https://chrome.google.com/webstore/detail/get-cookiestxt/bg
 <img src="https://github.com/rouze-d/tiktok-download/blob/master/tiktok.png" width="900" height="700"/>
 </p>
 
-## Demo
-[Watch the video]
-
-tik.mp4 - download single video<br>
-tok.mp4 - download all video
