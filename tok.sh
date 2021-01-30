@@ -1,28 +1,17 @@
-#!/bin/bash
+#!/bin/sh
+#▀▛▘▗ ▌ ▀▛▘  ▌   ▛▀▖          ▜         ▌
+# ▌ ▄ ▌▗▘▌▞▀▖▌▗▘ ▌ ▌▞▀▖▌  ▌▛▀▖▐ ▞▀▖▝▀▖▞▀▌▞▀▖▙▀▖
+# ▌ ▐ ▛▚ ▌▌ ▌▛▚  ▌ ▌▌ ▌▐▐▐ ▌ ▌▐ ▌ ▌▞▀▌▌ ▌▛▀ ▌
+# ▘ ▀▘▘ ▘▘▝▀ ▘ ▘ ▀▀ ▝▀  ▘▘ ▘ ▘ ▘▝▀ ▝▀▘▝▀▘▝▀▘▘by rouze_d
 
-YELLOW=$(tput setaf 3)
-GREEN=$(tput setaf 2)
-RED=$(tput setaf 1)
-BLUE=$(tput setaf 4)
-GGG=$(tput setaf 5)
-CYN=$(tput setaf 7)
-STAND=$(tput sgr 0)
-BOLD=$(tput bold)
+TIKTOK_HANDLE="$1"
+[ -z "$TIKTOK_HANDLE" ] && echo "Please specify a TikToker's handle (@some_name)" && exit 1
 
+mkdir "$TIKTOK_HANDLE"
+tr '"' '\n' < "$(find "$PWD" -iname "*$TIKTOK_HANDLE*.html")" | grep @ | grep '/video/' | grep '\.com/@' >> "$TIKTOK_HANDLE"/urls.txt
 
-echo -e "$RED$BOLD
- ▀▛▘▗ ▌ ▀▛▘  ▌   ▛▀▖          ▜         ▌      
-  ▌ ▄ ▌▗▘▌▞▀▖▌▗▘ ▌ ▌▞▀▖▌  ▌▛▀▖▐ ▞▀▖▝▀▖▞▀▌▞▀▖▙▀▖
-  ▌ ▐ ▛▚ ▌▌ ▌▛▚  ▌ ▌▌ ▌▐▐▐ ▌ ▌▐ ▌ ▌▞▀▌▌ ▌▛▀ ▌  
-  ▘ ▀▘▘ ▘▘▝▀ ▘ ▘ ▀▀ ▝▀  ▘▘ ▘ ▘ ▘▝▀ ▝▀▘▝▀▘▝▀▘▘$STAND by-$GREEN$BOLD rouze_d$STAND"
+while read -r url;
+do
+    ./tik.sh "$url" "$TIKTOK_HANDLE"/
+done < "$TIKTOK_HANDLE"/urls.txt
 
-echo ""
-echo -e "Input Name : \c"
-read name
-
-mkdir $name
-cp tik.sh $name/
-cat *$name*.html | tr '"' '\n' | grep @ | grep '/video/' | grep '\.com/@' >> $name/$name.txt
-cd $name
-for x in `cat $name.txt`;do bash tik.sh $x;done
-echo "Done"
