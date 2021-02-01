@@ -21,9 +21,11 @@ VIDEO_URL=$(curl --cookie "$PWD"/.cookie.txt \
     --user-agent "$USER_AGENT" \
     --connect-timeout 90 "$TIKTOK_URL" | tr '"' '\n' | grep video_mp4 | head -n 1 | sed 's/amp;//g')
 
-curl --cookie "$PWD"/.cookie.txt \
+curl --progress-bar \
+    --cookie "$PWD"/.cookie.txt \
     --referer "$TIKTOK_URL" \
     --user-agent "$USER_AGENT" \
     --output "$DESTINATION_FOLDER""$AUTHOR"-"$ID".mp4 \
     --continue-at - "$VIDEO_URL"
+
 
