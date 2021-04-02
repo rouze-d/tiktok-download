@@ -2,6 +2,7 @@
 need
 ```
 sudo apt-get install curl
+git clone --depth 1 https://github.com/rouze-d/tiktok-download
 ```
 file:<br>
 tik.sh - download single video.<br>
