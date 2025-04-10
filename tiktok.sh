@@ -41,7 +41,7 @@ fi
 
 
 if [ ${test} == "photo" ]; then
-    for x in `curl -sk 'https://tikwm.com/api/?url='${id}'&count=12&cursor=0&web=1&hd=1' | tr '"' '\n' | grep https | grep -i '.jpeg'  | tr -d '\\'`;do y=$(echo -e ${x} | cut -d '&' -f4 | cut -d '=' -f2); wget -c ${x} -O ${user}-${y}.jpeg;done
+    for x in `curl -sk 'https://tikwm.com/api/?url='${id}'&count=12&cursor=0&web=1&hd=1' | tr '"' '\n' | grep https | grep -i '.jpeg'  | tr -d '\\'`;do y=$(echo -e ${x} | cut -d '~' -f1 | cut -d '/' -f5); wget -c ${x} -O ${user}-${y}.jpeg;done
 
 fi
 
